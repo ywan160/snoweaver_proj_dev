@@ -1,0 +1,11 @@
+func_definition: |-
+  def now(timezone:str=''):
+      from datetime import datetime
+      if timezone=='':
+          return datetime.now()
+      else:
+          return datetime.now(pytz.timezone(timezone))
+func_packages: ''
+func_validation: |-
+  {{ now() }}
+  {{ now('Pacific/Auckland').isoformat() }}

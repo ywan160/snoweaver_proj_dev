@@ -1,0 +1,25 @@
+lib_functions:
+- json_dumps
+- json_loads
+- now
+- sleep
+- raise_exception
+lib_macros: |-
+  {% macro check_dbt_job_status(trigger_response,iterations,interval) %}
+  {%- for i in range (iterations) -%}
+  {%-  set result=json_loads(call_proc('check_dbt_job_status',trigger_response) ) -%}
+      {%- if result.data.status in [10] -%}
+          {{json_dumps(result.data)}}
+          {%- break -%}
+      {%- endif -%}
+      {%- if result.data.status in [20,30] -%}
+          {%- set href='Job Run failed. Run details: '~result.data.href -%}
+          {{- raise_exception(href) -}}
+          {%- break -%}
+      {%- endif -%}
+      {{- sleep(interval) -}}
+  {% endfor %}
+  {% endmacro %}
+lib_validation: |-
+  {% set _response={'data':{'id':259209307}} %}
+  {{ check_dbt_job_status(_response,10,5) }}

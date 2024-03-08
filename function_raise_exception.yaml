@@ -1,0 +1,6 @@
+func_definition: |-
+  def raise_exception(message:str):
+      raise Exception(message)
+func_packages: ''
+func_validation: "{{ raise_exception('This is a test.') }}"
+modules: ''

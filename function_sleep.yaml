@@ -1,0 +1,7 @@
+func_definition: |-
+  def sleep(seconds:int):
+      import time
+      time.sleep(seconds)
+      return ''
+func_packages: ''
+func_validation: '{{ sleep(2) }}'

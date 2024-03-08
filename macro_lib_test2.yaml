@@ -1,0 +1,7 @@
+lib_macros: |-
+  {%- macro m3() -%}
+  XXXX3
+  {%- endmacro -%}
+  {%- macro m4() -%}
+  XXXX4
+  {%- endmacro -%}

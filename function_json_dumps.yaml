@@ -1,0 +1,6 @@
+func_definition: |-
+  def json_dumps(input:dict):
+      import json
+      return json.dumps(input)
+func_packages: json5
+func_validation: "{{json_dumps({'a':'b'})}}"
