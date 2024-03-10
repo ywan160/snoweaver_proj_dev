@@ -2,10 +2,6 @@ enable_posthook: true
 enable_prehook: true
 endpoint: '{{proj.dbt_url}}/v2/accounts/{{proj.dbt_account_id}}/jobs/{{vars.job_id}}/run/'
 external_integration: DBT_API_ACCESS_INTEGRATION
-file_name: ''
-file_ops_overwrite: false
-file_ops_pack_unpack: false
-file_ops_parallel: 4
 headers: |-
   {
     "Authorization": "Token {{secrets.token}}"
@@ -22,9 +18,9 @@ job_macro_libs:
 - dbt_apis
 job_type: Procedure
 job_variables:
-- Debug Value: '534772'
-  Name: job_id
-  Type: Text
+- debug_value: '534772'
+  name: job_id
+  type: Text
 payload: |-
   {%- set name = json_loads(_prehook)['summary'] -%}
   {"cause": "API Triggered by {{name}}"}
@@ -35,8 +31,8 @@ request_type: POST
 response_format: Json
 return_posthook_output: true
 secrets:
-- ALIAS: token
-  SECRET: TEST1
+- alias: token
+  secret: TEST1
 status_code_range:
 - 200
 - 299

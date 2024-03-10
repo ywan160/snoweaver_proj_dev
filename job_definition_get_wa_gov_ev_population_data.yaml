@@ -1,6 +1,6 @@
 enable_posthook: false
 enable_prehook: false
-endpoint: https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD
+endpoint: https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accesstype=DOWNLOAD
 external_integration: WA_GOV_DATA_ACCESS_INTEGRATION
 file_name: ev-data{{now().isoformat()}}.csv
 file_ops_overwrite: true
@@ -12,15 +12,15 @@ job_functions:
 job_macro_libs: []
 job_type: Procedure
 job_variables:
-- Debug Value: ev-data
-  Name: filename
-  Type: Text
-- Debug Value: '{"a":"B"}'
-  Name: var_json
-  Type: Variant(JSON)
-- Debug Value: '[1,2]'
-  Name: var_array
-  Type: Array
+- debug_value: ev-data
+  name: filename
+  type: Text
+- debug_value: '{"a":"B"}'
+  name: var_json
+  type: Variant(JSON)
+- debug_value: '[1,2]'
+  name: var_array
+  type: Array
 payload: ''
 payload_format: Json
 posthook: ''

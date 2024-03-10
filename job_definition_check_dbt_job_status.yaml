@@ -14,9 +14,9 @@ job_functions: []
 job_macro_libs: []
 job_type: Procedure
 job_variables:
-- Debug Value: '{"data":{"id":254972454}}'
-  Name: run_info
-  Type: Variant(JSON)
+- debug_value: '{"data":{"id":254972454}}'
+  name: run_info
+  type: Variant(JSON)
 payload: ''
 payload_format: Json
 posthook: ''
@@ -25,8 +25,8 @@ request_type: GET
 response_format: Json
 return_posthook_output: false
 secrets:
-- ALIAS: token
-  SECRET: TEST1
+- alias: token
+  secret: TEST1
 status_code_range:
 - 200
 - 299

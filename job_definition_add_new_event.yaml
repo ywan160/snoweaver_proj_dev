@@ -21,18 +21,18 @@ job_macro_libs:
 - test2
 job_type: Table Function
 job_variables:
-- Debug Value: MyEvent
-  Name: title
-  Type: Text
-- Debug Value: ywan160@gmail.com
-  Name: google_account
-  Type: Text
-- Debug Value: '2024-02-04T09:00:00'
-  Name: startdt
-  Type: Text
-- Debug Value: '2024-02-06T17:00:00'
-  Name: enddt
-  Type: Text
+- debug_value: MyEvent
+  name: title
+  type: Text
+- debug_value: ywan160@gmail.com
+  name: google_account
+  type: Text
+- debug_value: '2024-02-04T09:00:00'
+  name: startdt
+  type: Text
+- debug_value: '2024-02-06T17:00:00'
+  name: enddt
+  type: Text
 payload: |-
   {
     "start": {
@@ -52,12 +52,12 @@ request_type: POST
 response_format: Json
 return_posthook_output: false
 secrets:
-- ALIAS: oauth
-  SECRET: GOOGLE_OAUTH_SECRET
-- ALIAS: gen
-  SECRET: TEST1
-- ALIAS: gen2
-  SECRET: TEST1
+- alias: oauth
+  secret: GOOGLE_OAUTH_secret
+- alias: gen
+  secret: TEST1
+- alias: gen2
+  secret: TEST1
 status_code_range:
 - 100
 - 299

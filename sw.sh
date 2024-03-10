@@ -1,34 +1,37 @@
-DB_NAME="BEAN_STREAM_DB"
-PROJECT="DEV"
-CONNECTION="sandbox"
+conn=$1
+op=$2
+file=$3
+delete=$4
 
 
-if [[ -z $1 ]] ; then
+if [[ -z $op ]] ; then
   echo '''
-usage: get all | <file>
-       put all [-delete] | <file>   
-            ~ -delete: delete before uploading
+usage: <connection> get all
+       <connection> get <file>
+       <connection> put all [-delete]
+                ~ -delete: delete before uploading
+       <connection> put <file>     
       '''
 fi
 
-if [[ $2 == all ]] ; then
+if [[ $file == all ]] ; then
   if [[ $OPTION == get ]] ; then
     FILE=
   else
     FILE=*.yaml
   fi
 else
-  FILE=$2
+  FILE=$file
 fi
 
-if [[ $3 == -delete && $2 == all ]] ; then
-  snowsql -o log_level=DEBUG  -c ${CONNECTION} -q "REMOVE @${DB_NAME}.${PROJECT}.CODE/"
+if [[ $delete == -delete && $file == all ]] ; then
+  snowsql -o log_level=DEBUG  -c ${conn} -q "REMOVE @CODE/"
 fi
 
-if [[ $1 == get ]] ; then
-  snowsql -o log_level=DEBUG  -c ${CONNECTION} -q "GET @${DB_NAME}.${PROJECT}.CODE/ file://. "
+if [[ $op == get ]] ; then
+  snowsql -o log_level=DEBUG  -c ${conn} -q "GET @CODE/ file://. "
 fi
 
-if [[ $1 == put ]] ; then
-  snowsql -o log_level=DEBUG  -c ${CONNECTION} -q "PUT file://${FILE} @${DB_NAME}.${PROJECT}.CODE/ AUTO_COMPRESS=FALSE OVERWRITE=TRUE"
+if [[ $op == put ]] ; then
+  snowsql -o log_level=DEBUG  -c ${conn} -q "PUT file://${FILE} @CODE/ AUTO_COMPRESS=FALSE OVERWRITE=TRUE"
 fi
