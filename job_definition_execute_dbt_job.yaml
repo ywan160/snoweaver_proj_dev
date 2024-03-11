@@ -18,7 +18,7 @@ job_macro_libs:
 - dbt_apis
 job_type: Procedure
 job_variables:
-- debug_value: '534772'
+- test_value: '534772'
   name: job_id
   type: Text
 payload: |-

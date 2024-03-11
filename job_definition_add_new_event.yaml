@@ -21,16 +21,16 @@ job_macro_libs:
 - test2
 job_type: Table Function
 job_variables:
-- debug_value: MyEvent
+- test_value: MyEvent
   name: title
   type: Text
-- debug_value: ywan160@gmail.com
+- test_value: ywan160@gmail.com
   name: google_account
   type: Text
-- debug_value: '2024-02-04T09:00:00'
+- test_value: '2024-02-04T09:00:00'
   name: startdt
   type: Text
-- debug_value: '2024-02-06T17:00:00'
+- test_value: '2024-02-06T17:00:00'
   name: enddt
   type: Text
 payload: |-

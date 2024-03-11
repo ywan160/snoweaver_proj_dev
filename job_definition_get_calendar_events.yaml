@@ -15,10 +15,10 @@ job_macro_libs:
 - test2
 job_type: Procedure
 job_variables:
-- debug_value: ywan160@gmail.com
+- test_value: ywan160@gmail.com
   name: google_account
   type: Text
-- debug_value: '2'
+- test_value: '2'
   name: limit
   type: Text
 payload_format: Json

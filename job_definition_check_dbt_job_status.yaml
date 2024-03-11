@@ -14,7 +14,7 @@ job_functions: []
 job_macro_libs: []
 job_type: Procedure
 job_variables:
-- debug_value: '{"data":{"id":254972454}}'
+- test_value: '{"data":{"id":254972454}}'
   name: run_info
   type: Variant(JSON)
 payload: ''

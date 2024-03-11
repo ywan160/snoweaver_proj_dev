@@ -12,13 +12,13 @@ job_functions:
 job_macro_libs: []
 job_type: Procedure
 job_variables:
-- debug_value: ev-data
+- test_value: ev-data
   name: filename
   type: Text
-- debug_value: '{"a":"B"}'
+- test_value: '{"a":"B"}'
   name: var_json
   type: Variant(JSON)
-- debug_value: '[1,2]'
+- test_value: '[1,2]'
   name: var_array
   type: Array
 payload: ''
