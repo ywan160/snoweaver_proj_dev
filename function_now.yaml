@@ -6,6 +6,6 @@ func_definition: |-
       else:
           return datetime.now(pytz.timezone(timezone))
 func_packages: ''
-func_validation: |-
+func_test: |-
   {{ now() }}
   {{ now('Pacific/Auckland').isoformat() }}

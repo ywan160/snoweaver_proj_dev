@@ -4,4 +4,4 @@ func_definition: |-
       time.sleep(seconds)
       return ''
 func_packages: ''
-func_validation: '{{ sleep(2) }}'
+func_test: '{{ sleep(2) }}'

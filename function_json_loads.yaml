@@ -3,4 +3,4 @@ func_definition: |-
       import json
       return json.loads(input)
 func_packages: json5
-func_validation: "{{json_loads('{\"a\":\"b\"}')}}"
+func_test: "{{json_loads('{\"a\":\"b\"}')}}"

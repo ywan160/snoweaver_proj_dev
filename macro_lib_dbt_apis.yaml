@@ -20,6 +20,6 @@ lib_macros: |-
       {{- sleep(interval) -}}
   {% endfor %}
   {% endmacro %}
-lib_validation: |-
+lib_test: |-
   {% set _response={'data':{'id':259209307}} %}
   {{ check_dbt_job_status(_response,10,5) }}
