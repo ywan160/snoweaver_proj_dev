@@ -23,7 +23,7 @@ response_format: Json
 return_posthook_output: false
 secrets:
 - alias: oauth
-  secret: GOOGLE_OAUTH_secret
+  secret: GOOGLE_OAUTH_SECRET
 status_code_range:
 - 100
 - 599

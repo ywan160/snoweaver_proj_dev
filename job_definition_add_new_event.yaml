@@ -53,7 +53,7 @@ response_format: Json
 return_posthook_output: false
 secrets:
 - alias: oauth
-  secret: GOOGLE_OAUTH_secret
+  secret: GOOGLE_OAUTH_SECRET
 - alias: gen
   secret: TEST1
 - alias: gen2

@@ -14,13 +14,13 @@ job_type: Procedure
 job_variables:
 - test_value: ev-data
   name: filename
-  type: Text
+  type: text
 - test_value: '{"a":"B"}'
   name: var_json
-  type: Variant(JSON)
+  type: json
 - test_value: '[1,2]'
   name: var_array
-  type: Array
+  type: array
 payload: ''
 payload_format: Json
 posthook: ''
