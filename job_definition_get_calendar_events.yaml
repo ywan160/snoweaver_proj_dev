@@ -1,5 +1,3 @@
-enable_posthook: false
-enable_prehook: false
 endpoint: https://www.googleapis.com/calendar/v3/calendars/{{ vars.google_account
   }}/events?maxResults={{vars.limit}}
 external_integration: GOOGLE_APIS_ACCESS_INTEGRATION
@@ -9,25 +7,23 @@ headers: |-
     "Accept":"application/json",
     "Content-type": "application/json"
   }
-job_functions: []
-job_macro_libs:
-- test1
-- test2
-job_type: Procedure
-job_variables:
-- test_value: ywan160@gmail.com
-  name: google_account
-  type: Text
-- test_value: '2'
-  name: limit
-  type: Text
-payload_format: Json
-request_type: GET
-response_format: Json
+payload_format: json
+posthook_enable: false
+posthook_return_output: false
+prehook_enable: false
+request_type: get
+response_format: json
+response_status_code_range:
+- 100
+- 299
 secrets:
 - alias: oauth
   secret: GOOGLE_OAUTH_SECRET
-status_code_range:
-- 100
-- 299
-store_response: true
+type: procedure
+variables:
+- name: google_account
+  test_value: ywan160@gmail.com
+  type: text
+- name: limit
+  test_value: '2'
+  type: text

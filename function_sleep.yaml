@@ -1,7 +1,7 @@
-func_definition: |-
+definition: |-
   def sleep(seconds:int):
       import time
       time.sleep(seconds)
       return ''
-func_packages: ''
-func_test: '{{ sleep(2) }}'
+packages: ''
+test: '{{ sleep(2) }}'

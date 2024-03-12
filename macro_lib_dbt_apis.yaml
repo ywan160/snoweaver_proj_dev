@@ -1,10 +1,10 @@
-lib_functions:
+functions:
 - json_dumps
 - json_loads
 - now
 - sleep
 - raise_exception
-lib_macros: |-
+macros: |-
   {% macro check_dbt_job_status(trigger_response,iterations,interval) %}
   {%- for i in range (iterations) -%}
   {%-  set result=json_loads(call_proc('check_dbt_job_status',trigger_response) ) -%}
@@ -20,6 +20,6 @@ lib_macros: |-
       {{- sleep(interval) -}}
   {% endfor %}
   {% endmacro %}
-lib_test: |-
+test: |-
   {% set _response={'data':{'id':259209307}} %}
   {{ check_dbt_job_status(_response,10,5) }}

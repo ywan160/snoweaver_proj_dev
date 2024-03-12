@@ -1,33 +1,24 @@
-enable_posthook: false
-enable_prehook: false
 endpoint: '{{proj.dbt_url}}/v2/accounts/{{proj.dbt_account_id}}/runs/{{vars.run_info.data.id}}/'
 external_integration: DBT_API_ACCESS_INTEGRATION
-file_name: ''
-file_ops_overwrite: false
-file_ops_pack_unpack: false
-file_ops_parallel: 4
+functions: []
 headers: |-
   {
     "Authorization": "Token {{secrets.token}}"
   }
-job_functions: []
-job_macro_libs: []
-job_type: Procedure
-job_variables:
-- test_value: '{"data":{"id":254972454}}'
-  name: run_info
-  type: Variant(JSON)
-payload: ''
-payload_format: Json
-posthook: ''
-prehook: ''
-request_type: GET
-response_format: Json
-return_posthook_output: false
+macro_libs: []
+payload_format: json
+posthook_enable: false
+prehook_enable: false
+request_type: get
+response_format: json
+response_status_code_range:
+- 200
+- 299
 secrets:
 - alias: token
   secret: TEST1
-status_code_range:
-- 200
-- 299
-store_response: false
+type: procedure
+variables:
+- name: run_info
+  test_value: '{"data":{"id":254972454}}'
+  type: dict

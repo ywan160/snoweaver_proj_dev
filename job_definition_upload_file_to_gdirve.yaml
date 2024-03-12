@@ -1,30 +1,26 @@
-enable_posthook: false
-enable_prehook: false
 endpoint: https://www.googleapis.com/upload/drive/v3/files?uploadType=media
 external_integration: GOOGLE_APIS_ACCESS_INTEGRATION
 file_name: get_wa_gov_ev_population_data/ev-data2024-03-05T22:22:38.959911.csv
 file_ops_overwrite: false
 file_ops_pack_unpack: false
 file_ops_parallel: 4
+functions: []
 headers: |-
   {
     "Authorization": "Bearer {{ secrets.oauth }}"
   }
-job_functions: []
-job_macro_libs: []
-job_type: Procedure
-job_variables: []
-payload: ''
-payload_format: File
-posthook: ''
-prehook: ''
-request_type: POST
-response_format: Json
-return_posthook_output: false
+macro_libs: []
+payload_format: file
+posthook_enable: false
+posthook_return_output: false
+prehook_enable: false
+request_type: post
+response_format: json
+response_status_code_range:
+- 100
+- 599
 secrets:
 - alias: oauth
   secret: GOOGLE_OAUTH_SECRET
-status_code_range:
-- 100
-- 599
-store_response: true
+type: procedure
+variables: []

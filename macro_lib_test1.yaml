@@ -1,7 +1,0 @@
-lib_macros: |-
-  {% macro m1() -%}
-  XXXX1
-  {%- endmacro %}
-  {% macro m2() -%}
-  XXXX2
-  {%- endmacro %}

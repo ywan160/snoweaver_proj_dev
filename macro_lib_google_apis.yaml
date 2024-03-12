@@ -1,6 +1,6 @@
-lib_functions: []
-lib_macros: |-
+functions: []
+macros: |-
   {% macro get_events() %}
   {{ call_proc('get_calendar_events','ywan160@gmail.com','2') }}
   {% endmacro %}
-lib_test: '{{ get_events() }}'
+test: '{{ get_events() }}'

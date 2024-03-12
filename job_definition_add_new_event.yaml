@@ -1,38 +1,15 @@
-enable_posthook: false
-enable_prehook: true
 endpoint: https://www.googleapis.com/calendar/v3/calendars/{{ vars.google_account
   }}/events
 external_integration: GOOGLE_APIS_ACCESS_INTEGRATION
-file_name: ''
-file_ops_overwrite: false
-file_ops_pack_unpack: false
-file_ops_parallel: 4
+functions:
+- now
+- json_dumps
 headers: |-
   {
     "Authorization": "Bearer {{ secrets.oauth}}",
     "Accept":"application/json",
     "Content-Type": "application/json"
   }
-job_functions:
-- now
-- json_dumps
-job_macro_libs:
-- test1
-- test2
-job_type: Table Function
-job_variables:
-- test_value: MyEvent
-  name: title
-  type: Text
-- test_value: ywan160@gmail.com
-  name: google_account
-  type: Text
-- test_value: '2024-02-04T09:00:00'
-  name: startdt
-  type: Text
-- test_value: '2024-02-06T17:00:00'
-  name: enddt
-  type: Text
 payload: |-
   {
     "start": {
@@ -45,12 +22,15 @@ payload: |-
     },
     "summary": "{{vars.title}}"
   }
-payload_format: Json
-posthook: ''
+payload_format: json
+posthook_enable: false
 prehook: '{{ now() }}'
-request_type: POST
-response_format: Json
-return_posthook_output: false
+prehook_enable: true
+request_type: post
+response_format: json
+response_status_code_range:
+- 100
+- 299
 secrets:
 - alias: oauth
   secret: GOOGLE_OAUTH_SECRET
@@ -58,7 +38,17 @@ secrets:
   secret: TEST1
 - alias: gen2
   secret: TEST1
-status_code_range:
-- 100
-- 299
-store_response: false
+type: table_function
+variables:
+- name: title
+  test_value: MyEvent
+  type: text
+- name: google_account
+  test_value: ywan160@gmail.com
+  type: text
+- name: startdt
+  test_value: '2024-02-04T09:00:00'
+  type: text
+- name: enddt
+  test_value: '2024-02-06T17:00:00'
+  type: text

@@ -1,6 +1,6 @@
-func_definition: |-
+definition: |-
   def json_dumps(input:dict):
       import json
       return json.dumps(input)
-func_packages: json5
-func_test: "{{json_dumps({'a':'b'})}}"
+packages: json5
+test: "{{json_dumps({'a':'b'})}}"

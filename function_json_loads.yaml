@@ -1,6 +1,6 @@
-func_definition: |-
+definition: |-
   def json_loads(input: str):
       import json
       return json.loads(input)
-func_packages: json5
-func_test: "{{json_loads('{\"a\":\"b\"}')}}"
+packages: json5
+test: "{{json_loads('{\"a\":\"b\"}')}}"

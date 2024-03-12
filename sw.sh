@@ -24,8 +24,12 @@ else
   FILE=$file
 fi
 
-if [[ $delete == -delete && $file == all ]] ; then
+if [[ $delete == -delete && $file == all && $op == put ]] ; then
   snowsql -o log_level=DEBUG  -c ${conn} -q "REMOVE @CODE/"
+fi
+
+if [[ $delete == -delete && $file == all && $op == get ]] ; then
+  rm ./*.yaml
 fi
 
 if [[ $op == get ]] ; then
