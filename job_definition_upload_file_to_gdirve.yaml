@@ -12,7 +12,6 @@ headers: |-
 macro_libs: []
 payload_format: file
 posthook_enable: false
-posthook_return_output: false
 prehook_enable: false
 request_type: post
 response_format: json

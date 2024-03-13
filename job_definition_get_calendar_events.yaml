@@ -1,15 +1,16 @@
 endpoint: https://www.googleapis.com/calendar/v3/calendars/{{ vars.google_account
   }}/events?maxResults={{vars.limit}}
 external_integration: GOOGLE_APIS_ACCESS_INTEGRATION
+functions: []
 headers: |-
   {
     "Authorization": "Bearer {{ secrets.oauth}}",
     "Accept":"application/json",
     "Content-type": "application/json"
   }
+macro_libs: []
 payload_format: json
 posthook_enable: false
-posthook_return_output: false
 prehook_enable: false
 request_type: get
 response_format: json

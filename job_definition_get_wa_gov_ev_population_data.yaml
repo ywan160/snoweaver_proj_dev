@@ -10,7 +10,6 @@ headers: ''
 macro_libs: []
 payload_format: json
 posthook_enable: false
-posthook_return_output: false
 prehook_enable: false
 request_type: get
 response_format: file
